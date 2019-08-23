@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+<div>
+    <img id="myPhoto" width="50%">
+
+</div>
+<script>
+
+
+let myTimer = setInterval(gallery, 3000)
+
+
+function gallery (){
+    let id = Math.floor(Math.random() * 90) + 5;
+    var sourceImg = "https://picsum.photos/" + id;
+    document.getElementById('myPhoto').src="https://picsum.photos/" + id;
+    console.log("test", sourceImg)
+}
+
+
+</script>
+
+
+</body>
+</html>
