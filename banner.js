@@ -9,16 +9,17 @@ var listArray = [
 
   var index = 0;
 
-  setInterval(function(){ 
-    index == listArray.length ? index = 0 : ""; 
-    /* if index is equal to the length of listArray; 
-    index should be equal to 0. 
-    If else; do nothing */
+  setInterval(function(){
+    // index == listArray.length ? index = 0 : ""; 
+    if (index == listArray.length){
+      index = 0;
+    }else{
+      "";
+    }
     var images = document.getElementById("banner");
     images.src = listArray[index].image;
     index++;
-}, 2000);
-
+  }, 2000);
 
 
 

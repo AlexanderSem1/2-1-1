@@ -1,11 +1,12 @@
-fetch ("https://pokeapi.co/api/v2/pokemon")
+fetch ("https://pokeapi.co/api/v2/pokemon/")
 .then (function(response){
     return response.json();
 })
 .then (function(response){
     console.log(response);
     readCards(response);
-    console.log(response.results[0]);
+    console.log(response.results[7]);
+
 })
 
 function readCards(response) {
@@ -13,14 +14,19 @@ function readCards(response) {
         let cardsContainer = document.getElementById("parentElement");  
         let card = document.createElement("div");
         let cardName = document.createElement("h1");
-        let cardButton = document.createElement("a");
+        var cardButton = document.createElement("button");
+        cardButton.setAttribute("id", "btnId");
+
         cardsContainer.appendChild(card);
         card.appendChild(cardName);
         card.appendChild(cardButton);
+       
         cardName.innerHTML = response.results[i].name;
-        cardButton.innerHTML = "View more";  
+        cardButton.innerHTML = "View more";
+
     }
-} 
+}
+
 
 
 
